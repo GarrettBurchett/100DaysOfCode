@@ -19,6 +19,7 @@ article_upvotes = [int(score.getText().split()[0]) for score in soup.select('.sc
 print(article_upvotes)
 print(len(article_upvotes))
 
+# Here in case an article doesn't have any upvotes and there aren't 30 upvotes in article_upvotes
 difference = len(articles) - len(article_upvotes)
 
 max_score = max(article_upvotes)
@@ -33,5 +34,4 @@ max_score_index = article_upvotes.index(max_score)
 
 print(article_titles[max_score_index + difference])
 print(article_links[max_score_index + difference])
-print(article_upvotes[max_score_index])
-
+print(article_upvotes[max_score_index]) # Don't need the difference here as the max_score_index is the true max_score for this list.
